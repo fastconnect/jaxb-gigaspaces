@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.fastconnect.gigaspaces</groupId>
+	<artifactId>jaxb-gigaspaces-plugin</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>JAXB GigaSpaces plugin</name>
+	<description>This plugin allows you to build a Document based model from XSD schema using JAXB generation.</description>
+
+	<parent>
+		<groupId>fr.fastconnect.gigaspaces</groupId>
+		<artifactId>jaxb-gigaspaces-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../</relativePath>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-xjc</artifactId>
+			<version>2.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gigaspaces</groupId>
+			<artifactId>gs-openspaces</artifactId>
+			<version>8.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

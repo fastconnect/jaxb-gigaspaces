@@ -1,0 +1,15 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.fastconnect.gigaspaces</groupId>
+	<artifactId>jaxb-gigaspaces-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Jaxb GigaSpaces document generator</name>
+	<description>This project is the parent for a Jaxb maven plugin that generates GigaSpaces Documents classes from XSD. It contains the plugin and a demo project.</description>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>jaxb-gigaspaces-plugin</module>
+		<module>jaxb-gigaspaces-demo</module>
+	</modules>
+</project>

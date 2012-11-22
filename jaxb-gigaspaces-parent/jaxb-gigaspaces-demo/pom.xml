@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.fastconnect.gigaspaces</groupId>
+	<artifactId>jaxb-gigaspaces-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>JAXB demo project</name>
+	
+	<parent>
+		<groupId>fr.fastconnect.gigaspaces</groupId>
+		<artifactId>jaxb-gigaspaces-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1.12</version>
+		</dependency>
+		<dependency>
+			<groupId>fr.fastconnect.gigaspaces</groupId>
+			<artifactId>jaxb-gigaspaces-plugin</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>http://download.java.net/maven/2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<generatePackage>fr.fastconnect.xml.jaxb.generated</generatePackage>
+					<generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+					<extension>true</extension>
+					<args>
+						<arg>-XopenspacesDocument</arg>
+					</args>
+					<plugins>
+						<plugin>
+							<groupId>fr.fastconnect.gigaspaces</groupId>
+							<artifactId>jaxb-gigaspaces-plugin</artifactId>
+							<version>0.0.1-SNAPSHOT</version>
+						</plugin>
+					</plugins>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
